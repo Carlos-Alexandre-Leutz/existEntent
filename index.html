@@ -37,77 +37,9 @@
 </head>
 
 <body>
-
-    <div id="ask">
-        <p>Saia desta página</p>
-    </div>
-    <div id="warning" class="alert alert-danger" role="alert">
-
-
-
-        Espere olha o que eu tenho pra vc
-        <a href="#">fica e fexar esse alerta</a></p>
-
-
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script>
-        (function($) {
-            'use strict';
-
-            var timer;
-
-            function trackLeave(ev) {
-                if (ev.clientY > 0) {
-                    return;
-                }
-
-                if (timer) {
-                    clearTimeout(timer);
-                }
-
-                if ($.exitIntent.settings.sensitivity <= 0) {
-                    $.event.trigger('exitintent');
-                    return;
-                }
-
-                timer = setTimeout(
-                    function() {
-                        timer = null;
-                        $.event.trigger('exitintent');
-                    }, $.exitIntent.settings.sensitivity);
-            }
-
-            function trackEnter() {
-                if (timer) {
-                    clearTimeout(timer);
-                    timer = null;
-                }
-            }
-
-            $.exitIntent = function(enable, options) {
-                $.exitIntent.settings = $.extend($.exitIntent.settings, options);
-
-                if (enable == 'enable') {
-                    $(window).mouseleave(trackLeave);
-                    $(window).mouseenter(trackEnter);
-                } else if (enable == 'disable') {
-                    trackEnter(); // Turn off any outstanding timer
-                    $(window).unbind('mouseleave', trackLeave);
-                    $(window).unbind('mouseenter', trackEnter);
-                } else {
-                    throw "Invalid parameter to jQuery.exitIntent -- should be 'enable'/'disable'";
-                }
-            }
-
-            $.exitIntent.settings = {
-                'sensitivity': 300
-            };
-
-        })(jQuery);
-    </script>
+    <h1>
+        Ola essa foi uma atualização dentro do guit
+    </h1>
 </body>
 
 </html>
